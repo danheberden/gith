@@ -1,0 +1,39 @@
+{
+  "name": "gith",
+  "description": "githOOKS - simple node server that responds to github post-receive events",
+  "version": "0.1.0",
+  "homepage": "https://github.com/danheberden/gith",
+  "author": {
+    "name": "Dan Heberden",
+    "email": "danheberden@gmail.com",
+    "url": "http://danheberden.com/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/danheberden/gith.git"
+  },
+  "bugs": {
+    "url": "https://github.com/danheberden/gith/issues"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/danheberden/gith/blob/master/LICENSE-MIT"
+    }
+  ],
+  "main": "lib/gith",
+  "engines": {
+    "node": "~0.6.16"
+  },
+  "scripts": {
+    "test": "grunt test"
+  },
+  "dependencies": {
+    "eventemitter2" : ">= 0.4.9" ,
+    "lodash": ">= 0.3.2"
+  },
+  "devDependencies": {
+    "grunt": "~0.3.10"
+  },
+  "keywords": []
+}
