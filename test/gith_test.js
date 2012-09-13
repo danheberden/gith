@@ -1,4 +1,5 @@
 var githFactory = require('../lib/gith.js');
+var http = require('http');
 
 /*
   ======== A Handy Little Nodeunit Reference ========
@@ -87,4 +88,25 @@ exports['gith events'] = {
     test.done();
   }
 };
+
+exports['gith server'] = {
+  setUp: function( done ) {
+    done();
+  },
+  'gith creates a server and listens to payloads on that port': function( test ) {
+    test.expect(1);
+    var gith = githFactory.create( 9001 );
+    var payloadObject = { test: 'valid' };
+    gith().on( '*', function( data, payload ) {
+      test.equal( payload.test, payloadObject.test, "raw payload data should equal sent payload data" );
+      gith.close();
+      test.done();
+    });
+    // create a server to send data 
+    var requestServer = http.createClient( 9001, 'localhost' );
+    var request = requestServer.request( 'POST', '/', { 'host': 'localhost' } );
+    request.write( 'payload=' + JSON.stringify( payloadObject ) );
+    request.end();
+  }
+}    
 
