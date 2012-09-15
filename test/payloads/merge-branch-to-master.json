@@ -1,0 +1,85 @@
+{
+  "after": "3ec9fe4dd72de9841359e615099e3efd05e0e65e",
+  "base_ref": "refs/heads/merge-test",
+  "before": "812aa30306eaab89b80c8725aedb9158c85f6e6c",
+  "commits": [
+    {
+      "added": [
+        "merge-me.txt"
+      ],
+      "author": {
+        "email": "email@domain.com",
+        "name": "Dan Heberden",
+        "username": "danheberden"
+      },
+      "committer": {
+        "email": "email@domain.com",
+        "name": "Dan Heberden",
+        "username": "danheberden"
+      },
+      "distinct": false,
+      "id": "3ec9fe4dd72de9841359e615099e3efd05e0e65e",
+      "message": "add files to be merged",
+      "modified": [
+        "README.md"
+      ],
+      "removed": [],
+      "timestamp": "2012-09-12T23:19:18-07:00",
+      "url": "https://github.com/danheberden/payloads/commit/3ec9fe4dd72de9841359e615099e3efd05e0e65e"
+    }
+  ],
+  "compare": "https://github.com/danheberden/payloads/compare/812aa30306ea...3ec9fe4dd72d",
+  "created": false,
+  "deleted": false,
+  "forced": false,
+  "head_commit": {
+    "added": [
+      "merge-me.txt"
+    ],
+    "author": {
+      "email": "email@domain.com",
+      "name": "Dan Heberden",
+      "username": "danheberden"
+    },
+    "committer": {
+      "email": "email@domain.com",
+      "name": "Dan Heberden",
+      "username": "danheberden"
+    },
+    "distinct": false,
+    "id": "3ec9fe4dd72de9841359e615099e3efd05e0e65e",
+    "message": "add files to be merged",
+    "modified": [
+      "README.md"
+    ],
+    "removed": [],
+    "timestamp": "2012-09-12T23:19:18-07:00",
+    "url": "https://github.com/danheberden/payloads/commit/3ec9fe4dd72de9841359e615099e3efd05e0e65e"
+  },
+  "pusher": {
+    "email": "email@domain.com",
+    "name": "danheberden"
+  },
+  "ref": "refs/heads/master",
+  "repository": {
+    "created_at": "2012-09-12T22:57:59-07:00",
+    "description": "payloads",
+    "fork": false,
+    "forks": 0,
+    "has_downloads": true,
+    "has_issues": true,
+    "has_wiki": true,
+    "name": "payloads",
+    "open_issues": 0,
+    "owner": {
+      "email": "email@domain.com",
+      "name": "danheberden"
+    },
+    "private": false,
+    "pushed_at": "2012-09-12T23:20:22-07:00",
+    "size": 96,
+    "stargazers": 0,
+    "url": "https://github.com/danheberden/payloads",
+    "watchers": 0
+  }
+}

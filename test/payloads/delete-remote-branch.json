@@ -1,0 +1,36 @@
+{
+  "after": "0000000000000000000000000000000000000000",
+  "before": "3ec9fe4dd72de9841359e615099e3efd05e0e65e",
+  "commits": [],
+  "compare": "https://github.com/danheberden/payloads/compare/3ec9fe4dd72d...000000000000",
+  "created": false,
+  "deleted": true,
+  "forced": true,
+  "head_commit": null,
+  "pusher": {
+    "email": "email@domain.com",
+    "name": "danheberden"
+  },
+  "ref": "refs/heads/merge-test",
+  "repository": {
+    "created_at": "2012-09-12T22:57:59-07:00",
+    "description": "payloads",
+    "fork": false,
+    "forks": 0,
+    "has_downloads": true,
+    "has_issues": true,
+    "has_wiki": true,
+    "name": "payloads",
+    "open_issues": 0,
+    "owner": {
+      "email": "email@domain.com",
+      "name": "danheberden"
+    },
+    "private": false,
+    "pushed_at": "2012-09-14T17:09:59-07:00",
+    "size": 224,
+    "stargazers": 0,
+    "url": "https://github.com/danheberden/payloads",
+    "watchers": 0
+  }
+}
