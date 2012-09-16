@@ -1,9 +1,11 @@
 {
-  "after": "33c4538c83a56a6ffe05693a9b53214650828789",
-  "before": "7d3fd9de714011edd6cd150b650398b825ff32c2",
+  "after": "e004e25cc02347ad263176e4cd5486cdafb44e7c",
+  "before": "f0e0cfa78f2326e1bbc6413fbb5fe5fefdebf41d",
   "commits": [
     {
-      "added": [],
+      "added": [
+        "test.txt"
+      ],
       "author": {
         "email": "email@domain.com",
         "name": "Dan Heberden",
@@ -15,22 +17,22 @@
         "username": "danheberden"
       },
       "distinct": true,
-      "id": "33c4538c83a56a6ffe05693a9b53214650828789",
-      "message": "remove files",
+      "id": "e004e25cc02347ad263176e4cd5486cdafb44e7c",
+      "message": "just reset head, now adding file and will push",
       "modified": [],
-      "removed": [
-        "another2.txt"
-      ],
-      "timestamp": "2012-09-15T17:31:09-07:00",
-      "url": "https://github.com/danheberden/payloads/commit/33c4538c83a56a6ffe05693a9b53214650828789"
+      "removed": [],
+      "timestamp": "2012-09-13T12:25:26-07:00",
+      "url": "https://github.com/danheberden/payloads/commit/e004e25cc02347ad263176e4cd5486cdafb44e7c"
     }
   ],
-  "compare": "https://github.com/danheberden/payloads/compare/7d3fd9de7140...33c4538c83a5",
+  "compare": "https://github.com/danheberden/payloads/compare/f0e0cfa78f23...e004e25cc023",
   "created": false,
   "deleted": false,
-  "forced": false,
+  "forced": true,
   "head_commit": {
-    "added": [],
+    "added": [
+      "test.txt"
+    ],
     "author": {
       "email": "email@domain.com",
       "name": "Dan Heberden",
@@ -42,14 +44,12 @@
       "username": "danheberden"
     },
     "distinct": true,
-    "id": "33c4538c83a56a6ffe05693a9b53214650828789",
-    "message": "remove files",
+    "id": "e004e25cc02347ad263176e4cd5486cdafb44e7c",
+    "message": "just reset head, now adding file and will push",
     "modified": [],
-    "removed": [
-      "another2.txt"
-    ],
-    "timestamp": "2012-09-15T17:31:09-07:00",
-    "url": "https://github.com/danheberden/payloads/commit/33c4538c83a56a6ffe05693a9b53214650828789"
+    "removed": [],
+    "timestamp": "2012-09-13T12:25:26-07:00",
+    "url": "https://github.com/danheberden/payloads/commit/e004e25cc02347ad263176e4cd5486cdafb44e7c"
   },
   "pusher": {
     "email": "email@domain.com",
@@ -71,8 +71,8 @@
       "name": "danheberden"
     },
     "private": false,
-    "pushed_at": "2012-09-15T17:31:19-07:00",
-    "size": 236,
+    "pushed_at": "2012-09-13T12:25:55-07:00",
+    "size": 224,
     "stargazers": 0,
     "url": "https://github.com/danheberden/payloads",
     "watchers": 0
