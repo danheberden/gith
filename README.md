@@ -97,6 +97,30 @@ This is the payload that gith gives you:
 }
 ```
 
+## `gith()`
+
+The gith function returns a new Gith object that has all of the [EventEmitter2](https://github.com/hij1nx/EventEmitter2)
+methods.
+
+
+## Additional `gith` Methods
+
+On the gith server, there are three additional methods available:
+
+#### `gith.close()`
+
+This closes the gith server 
+
+#### `gith.listen( port )`
+
+If you didn't pass in a port to `.create()` when you required gith, this 
+will start the server on the specified port
+
+#### `gith.payload( github-style-payload )`
+
+You can broadcast a payload to the gith server manually.
+
+
 ## License
 Copyright (c) 2012 Dan Heberden
 Licensed under the MIT license.
