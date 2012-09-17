@@ -1,7 +1,7 @@
 {
   "name": "gith",
-  "description": "githOOKS - simple node server that responds to github post-receive events",
-  "version": "0.1.0",
+  "description": "gith[ooks] - a simple node server that responds to github post-receive events with meaningful data",
+  "version": "1.0.0",
   "homepage": "https://github.com/danheberden/gith",
   "author": {
     "name": "Dan Heberden",
@@ -23,7 +23,7 @@
   ],
   "main": "lib/gith",
   "engines": {
-    "node": "~0.6.16"
+    "node": ">0.6.12"
   },
   "scripts": {
     "test": "grunt test"
@@ -33,7 +33,7 @@
     "lodash": ">= 0.3.2"
   },
   "devDependencies": {
-    "grunt": "~0.3.10"
+    "grunt": "~0.3.14"
   },
   "keywords": []
 }
