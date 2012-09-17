@@ -30,6 +30,11 @@ gith({
 });
 ```
 
+### Hook
+
+Be sure github.com is sending payload data to your server. From your repository root 
+go to `Admin > Service Hooks > WebHook URLs` and add your server url, e.g., `http://mycoolserver.com:9001`.
+
 ## Filtering
 
 The object passed into `gith()` can utilize four parameters (`repo`, `branch`, `file` and `tag`). 
