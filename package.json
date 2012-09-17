@@ -35,5 +35,5 @@
   "devDependencies": {
     "grunt": "~0.3.14"
   },
-  "keywords": []
+  "keywords": [ "github", "payload", "git hook", "post-receive" ]
 }
