@@ -1,6 +1,7 @@
 var githFactory = require('../lib/gith.js');
 var http = require('http');
 var _ = require('lodash');
+var querystring = require('querystring');
 
 /*
   ======== A Handy Little Nodeunit Reference ========
@@ -94,7 +95,7 @@ exports['gith server'] = {
   setUp: function( done ) {
     done();
   },
-  'gith creates a server and listens to payloads on that port': function( test ) {
+  'gith creates a server and listens to unescaped payloads on that port': function( test ) {
     test.expect(1);
     var gith = githFactory.create( 9001 );
     
@@ -122,6 +123,36 @@ exports['gith server'] = {
       method: 'POST'
     });
     request.write( 'payload=' + JSON.stringify( payloadObject ) );
+    request.end();
+  },
+  'gith creates a server and listens to escaped payloads on that port': function( test ) {
+    test.expect(1);
+    var gith = githFactory.create( 9001 );
+    
+    var payloadObject = require('./payloads/add-file-and-dir.json');
+    var failSafe = false;
+    gith().on( 'all', function( payload ) {
+      failSafe = true;
+      test.equal( payload.original.after, payloadObject.after, "payload data should equal sent payload data" );
+      gith.close();
+      test.done();
+    });
+
+    // just incase
+    setTimeout( function() {
+      if ( !failSafe ) {
+        gith.close();
+        test.ok( false, 'payload event never fired after 200ms, shutting down server' );
+        test.done();
+      }
+    }, 200 );
+
+    var request = http.request({
+      port: 9001,
+      host: 'localhost',
+      method: 'POST'
+    });
+    request.write( 'payload=' + querystring.escape( JSON.stringify( payloadObject ) ) );
     request.end();
   }
 };
