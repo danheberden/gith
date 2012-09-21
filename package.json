@@ -1,7 +1,7 @@
 {
   "name": "gith",
   "description": "gith[ooks] - a simple node server that responds to github post-receive events with meaningful data",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "homepage": "https://github.com/danheberden/gith",
   "author": {
     "name": "Dan Heberden",
