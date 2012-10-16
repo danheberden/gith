@@ -200,6 +200,13 @@ exports['gith filtering'] = {
       test.ok( false, 'repo should have matched, but not branch, so.....' );
     });
 
+    var test6 = gith({
+      repo: 'wrong/repo',
+      branch: 'merge-test'
+    }).on( 'all', function( payload ) {
+      test.ok( false, 'branch should have matched, but not repo, so.....' );
+    });
+
     // this needs to be improved
     setTimeout( function(){
       test.done();
