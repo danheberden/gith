@@ -132,7 +132,7 @@ You can broadcast a payload to the gith server manually.
 
 When you use Github UI to declare a web hook, it's only attached to the `push` event.
 
-Whenever you want to attach you hook to other events, you will have to use [the API](http://developer.github.com/v3/repos/hooks/). In this case, `gith` may not be able to fully interpret the original payload, and you should simply rely on `payload.original`.
+Whenever you want to attach you hook to other events, you will have to use [the API](http://developer.github.com/v3/repos/hooks/). In this case, `gith` may not be able to fully interpret the original payload, and you **should consider the *simplified payload* as unreliable**. In those cases, just use `payload.original`.
 
 
 ## License
