@@ -10,8 +10,8 @@ Install the module with: `npm install gith`
 
 ### Require
 
-In your node application, require gith and create a gith server. You can specify a port now, or 
-you can use the `.listen( portNumber )` method later. 
+In your node application, require gith and create a gith server. You can specify a port now, or
+you can use the `.listen( portNumber )` method later.
 
 ```javascript
 // create a gith server on port 9001
@@ -32,12 +32,12 @@ gith({
 
 ### Hook
 
-Be sure github.com is sending payload data to your server. From your repository root 
+Be sure github.com is sending payload data to your server. From your repository root
 go to `Admin > Service Hooks > WebHook URLs` and add your server url, e.g., `http://mycoolserver.com:9001`.
 
 ## Filtering
 
-The object passed into `gith()` can utilize four parameters (`repo`, `branch`, `file` and `tag`). 
+The object passed into `gith()` can utilize four parameters (`repo`, `branch`, `file` and `tag`).
 All of these can either be an exact match string, a regular expression or a function.
 
 For example:
@@ -71,7 +71,7 @@ Events available are:
 
 ## Payload
 
-The github payload is very detailed, but can be a bit excessive. 
+The github payload is very detailed, but can be a bit excessive.
 
 This is the payload that gith gives you:
 
@@ -102,6 +102,8 @@ This is the payload that gith gives you:
 }
 ```
 
+Note that this payload will only be fully available in case of standard `push` hooks (see below for more information).
+
 ## `gith()`
 
 The gith function returns a new Gith object that has all of the [EventEmitter2](https://github.com/hij1nx/EventEmitter2)
@@ -114,11 +116,11 @@ On the gith server, there are three additional methods available:
 
 #### `gith.close()`
 
-This closes the gith server 
+This closes the gith server
 
 #### `gith.listen( port )`
 
-If you didn't pass in a port to `.create()` when you required gith, this 
+If you didn't pass in a port to `.create()` when you required gith, this
 will start the server on the specified port
 
 #### `gith.payload( github-style-payload )`
@@ -126,6 +128,14 @@ will start the server on the specified port
 You can broadcast a payload to the gith server manually.
 
 
+## Using `gith` for other types of hooks
+
+When you use Github UI to declare a web hook, it's only attached to the `push` event.
+
+Whenever you want to attach you hook to other events, you will have to use [the API](http://developer.github.com/v3/repos/hooks/). In this case, `gith` may not be able to fully interpret the original payload, and you should simply rely on `payload.original`.
+
+
 ## License
+
 Copyright (c) 2012 Dan Heberden
 Licensed under the MIT license.
