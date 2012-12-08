@@ -98,7 +98,7 @@ exports['gith server'] = {
   'gith creates a server and listens to unescaped payloads on that port': function( test ) {
     test.expect(1);
     var gith = githFactory.create( 9001 );
-    
+
     var payloadObject = require('./payloads/add-file-and-dir.json');
     var failSafe = false;
     gith().on( 'all', function( payload ) {
@@ -128,7 +128,7 @@ exports['gith server'] = {
   'gith creates a server and listens to escaped payloads on that port': function( test ) {
     test.expect(1);
     var gith = githFactory.create( 9001 );
-    
+
     var payloadObject = require('./payloads/add-file-and-dir.json');
     var failSafe = false;
     gith().on( 'all', function( payload ) {
@@ -157,7 +157,7 @@ exports['gith server'] = {
   }
 };
 
-exports['gith filtering'] = { 
+exports['gith filtering'] = {
   setUp: function( done ) {
     done();
   },
@@ -165,7 +165,7 @@ exports['gith filtering'] = {
     test.expect(3);
     var json = require( './payloads/create-branch-with-files.json' );
     var gith = githFactory.create();
-    
+
     var test1 = gith({
       repo: 'danheberden/payloads'
     }).on( 'all', function( payload ) {
@@ -218,7 +218,7 @@ exports['gith filtering'] = {
     test.expect(3);
     var json = require( './payloads/tag-v1.0.0.json' );
     var gith = githFactory.create();
-    
+
     var test1 = gith({
       repo: /payloads/
     }).on( 'all', function( payload ) {
@@ -248,7 +248,7 @@ exports['gith filtering'] = {
   }
 };
 
- 
+
 exports['gith events'] = {
   setUp: function( done ) {
     done();
@@ -272,7 +272,7 @@ exports['gith events'] = {
     var gith = githFactory.create();
     var g = gith();
     g.on( 'file:delete', function( payload ) {
-      test.deepEqual( [ 'another2.txt' ], payload.files.deleted, 
+      test.deepEqual( [ 'another2.txt' ], payload.files.deleted,
                       'delete branch event should have deleted branch' );
       test.done();
     });
@@ -335,4 +335,24 @@ exports['gith events'] = {
     gith.payload( json );
   }
 
+};
+
+
+exports['other hook types'] = {
+  setUp: function( done ) {
+    done();
+  },
+  'pull-request.json': function( test ) {
+    test.expect(1);
+    var json = require( './payloads/pull-request.json' );
+    var gith = githFactory.create();
+    var g = gith();
+
+    g.on( 'all', function( payload ) {
+      // No particular expectation except it must not crash and present original payload
+      test.equal(payload.original, json);
+      test.done();
+    });
+    gith.payload( json );
+  }
 };
