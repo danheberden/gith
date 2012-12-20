@@ -1,5 +1,7 @@
 # gith
 
+Version: 1.0.3
+
 gith[ooks] - a simple node server that responds to github post-receive events with meaningful data
 
 ## Getting Started
