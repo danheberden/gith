@@ -333,7 +333,20 @@ exports['gith events'] = {
       test.done();
     });
     gith.payload( json );
+  },
+  'tag-on-branch.json': function( test ) {
+    var json = require( './payloads/tag-on-branch.json' );
+    test.expect(2);
+    var gith = githFactory.create();
+    var g = gith();
+    g.on( 'tag:add', function( payload ) {
+      test.equal( payload.branch, 'itsabranch', 'tagging operation should still get the branch it fired on' );
+      test.equal( payload.sha, '48722bc3552e5e04293a74fd3851c0c643f76657' , 'tagging operation should point to commit' );
+      test.done();
+    });
+    gith.payload( json );
   }
+
 
 };
 

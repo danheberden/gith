@@ -1,0 +1,60 @@
+{
+  "after": "48722bc3552e5e04293a74fd3851c0c643f76657",
+  "base_ref": "refs/heads/itsabranch",
+  "before": "0000000000000000000000000000000000000000",
+  "commits": [],
+  "compare": "https://github.com/danheberden/payloads/compare/v12.21.12",
+  "created": true,
+  "deleted": false,
+  "forced": true,
+  "head_commit": {
+    "added": [
+      "branch.txt"
+    ],
+    "author": {
+      "email": "email@domain.com",
+      "name": "Dan Heberden",
+      "username": "danheberden"
+    },
+    "committer": {
+      "email": "email@domain.com",
+      "name": "Dan Heberden",
+      "username": "danheberden"
+    },
+    "distinct": true,
+    "id": "48722bc3552e5e04293a74fd3851c0c643f76657",
+    "message": "adding branch.txt into smarter branch",
+    "modified": [],
+    "removed": [],
+    "timestamp": "2012-12-21T06:32:02-08:00",
+    "url": "https://github.com/danheberden/payloads/commit/48722bc3552e5e04293a74fd3851c0c643f76657"
+  },
+  "pusher": {
+    "email": "email@domain.com",
+    "name": "danheberden"
+  },
+  "ref": "refs/tags/v12.21.12",
+  "repository": {
+    "created_at": "2012-11-26T13:15:32-08:00",
+    "description": "",
+    "fork": false,
+    "forks": 0,
+    "has_downloads": true,
+    "has_issues": true,
+    "has_wiki": true,
+    "id": 6872620,
+    "language": "JavaScript",
+    "name": "payloads",
+    "open_issues": 0,
+    "owner": {
+      "email": "email@domain.com",
+      "name": "danheberden"
+    },
+    "private": false,
+    "pushed_at": "2012-12-21T06:35:07-08:00",
+    "size": 140,
+    "stargazers": 0,
+    "url": "https://github.com/danheberden/payloads",
+    "watchers": 0
+  }
+}
