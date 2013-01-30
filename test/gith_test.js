@@ -98,6 +98,7 @@ exports['gith server'] = {
   'gith creates a server and listens to unescaped payloads on that port': function( test ) {
     test.expect(1);
     var gith = githFactory.create( 9001 );
+    gith.ips.push( '127.0.0.1' );
 
     var payloadObject = require('./payloads/add-file-and-dir.json');
     var failSafe = false;
@@ -128,6 +129,7 @@ exports['gith server'] = {
   'gith creates a server and listens to escaped payloads on that port': function( test ) {
     test.expect(1);
     var gith = githFactory.create( 9001 );
+    gith.ips.push( '127.0.0.1' );
 
     var payloadObject = require('./payloads/add-file-and-dir.json');
     var failSafe = false;
@@ -369,3 +371,41 @@ exports['other hook types'] = {
     gith.payload( json );
   }
 };
+
+exports['ip filtering'] = {
+  setUp: function( done ) {
+    done();
+  },
+  'custom ip': function( test ) {
+    test.expect(1);
+    var gith = githFactory.create();
+    test.ok( gith.ips.length > 0,  'One or more default safe IPs should be present' );
+    test.done();
+  },
+  'request from non-approved ip fails': function( test ) {
+    test.expect(0);
+    var json = require('./payloads/add-file-and-dir.json');
+    var gith = githFactory.create( 9001 );
+    var g = gith();
+    g.on( 'all', function() {
+      test.ok( false, 'Connections on local host should not be permitted' );
+      test.done();
+      gith.close();
+    });
+
+    var request = http.request({
+      port: 9001,
+      host: 'localhost',
+      method: 'POST'
+    });
+    request.write( 'payload=' + querystring.escape( JSON.stringify( json ) ) );
+    request.end();
+
+    setTimeout( function() {
+      test.done();
+      gith.close();
+    },300);
+  }
+};
+
+
