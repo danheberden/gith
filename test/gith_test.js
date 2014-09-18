@@ -123,7 +123,7 @@ exports['gith server'] = {
       host: 'localhost',
       method: 'POST'
     });
-    request.write( 'payload=' + JSON.stringify( payloadObject ) );
+    request.write( JSON.stringify( payloadObject ) );
     request.end();
   },
   'gith creates a server and listens to escaped payloads on that port': function( test ) {
@@ -154,7 +154,7 @@ exports['gith server'] = {
       host: 'localhost',
       method: 'POST'
     });
-    request.write( 'payload=' + querystring.escape( JSON.stringify( payloadObject ) ) );
+    request.write( querystring.escape( JSON.stringify( payloadObject ) ) );
     request.end();
   }
 };
@@ -398,7 +398,7 @@ exports['ip filtering'] = {
       host: 'localhost',
       method: 'POST'
     });
-    request.write( 'payload=' + querystring.escape( JSON.stringify( json ) ) );
+    request.write( querystring.escape( JSON.stringify( json ) ) );
     request.end();
 
     setTimeout( function() {
@@ -407,5 +407,3 @@ exports['ip filtering'] = {
     },300);
   }
 };
-
-
