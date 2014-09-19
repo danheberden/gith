@@ -29,8 +29,8 @@
     "test": "./node_modules/.bin/grunt test"
   },
   "dependencies": {
-    "eventemitter2" : ">= 0.4.9" ,
-    "lodash": ">= 0.3.2"
+    "eventemitter2" : ">= 0.4.14" ,
+    "lodash": ">= 1.0.0"
   },
   "devDependencies": {
     "grunt": "~0.3.14"
