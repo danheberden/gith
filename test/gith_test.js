@@ -358,14 +358,33 @@ exports['other hook types'] = {
     done();
   },
   'pull-request.json': function( test ) {
-    test.expect(1);
+    test.expect(4);
     var json = require( './payloads/pull-request.json' );
     var gith = githFactory.create();
     var g = gith();
 
     g.on( 'all', function( payload ) {
-      // No particular expectation except it must not crash and present original payload
+      // it must not crash and present original payload with key fields mapped
       test.equal(payload.original, json);
+      test.equal(payload.repo, "naholyr/gith");
+      test.equal(payload.branch, "test3");
+      test.equal(payload.sha, "abd633ff2744039e4bda1c697cea3d03152df3fc");
+      test.done();
+    });
+    gith.payload( json );
+  },
+  'pull-request-new.json': function( test ) {
+    test.expect(4);
+    var json = require( './payloads/pull-request-new.json' );
+    var gith = githFactory.create();
+    var g = gith();
+
+    g.on( 'all', function( payload ) {
+      // it must not crash and present original payload with key fields mapped
+      test.equal(payload.original, json);
+      test.equal(payload.repo, "someOwner/someRepo");
+      test.equal(payload.branch, "someBranch");
+      test.equal(payload.sha, "5b57e09043a285291ab7fae1fff9d499dbffe40c");
       test.done();
     });
     gith.payload( json );
