@@ -16,8 +16,8 @@ In your node application, require gith and create a gith server. You can specify
 you can use the `.listen( portNumber )` method later.
 
 ```javascript
-// create a gith server on port 9001
-var gith = require('gith').create( 9001 );
+// create a gith server on 127.0.0.1 port 9001
+var gith = require('gith').create( 9001, '127.0.0.1' );
 ```
 
 ### Use
@@ -106,6 +106,12 @@ This is the payload that gith gives you:
 
 Note that this payload will only be fully available in case of standard `push` hooks (see below for more information).
 
+## Securing
+
+You can set a secret into the webhooks settings of github and make gith authenticate any request made.
+To make gith authenticate the request, set the HOOK_SECRET environement variable to the secret you set
+on the webhook definition page in github.
+
 ## `gith()`
 
 The gith function returns a new Gith object that has all of the [EventEmitter2](https://github.com/hij1nx/EventEmitter2)
@@ -120,7 +126,7 @@ On the gith server, there are three additional methods available:
 
 This closes the gith server
 
-#### `gith.listen( port )`
+#### `gith.listen( port, host )`
 
 If you didn't pass in a port to `.create()` when you required gith, this
 will start the server on the specified port
