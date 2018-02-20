@@ -1,0 +1,1 @@
+lucky-word=Irish
